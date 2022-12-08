@@ -22,7 +22,7 @@ using namespace std;
 
 
 class BookList{
-  public: 
+  private: 
 
     typedef struct Book{
     string Title,Author;
@@ -31,6 +31,7 @@ class BookList{
 
   map<string,Book> Books;
     
+  public: 
     void insertBook(Book book){
         Books.insert({book.Title, book});
     }
