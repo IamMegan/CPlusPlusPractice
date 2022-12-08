@@ -4,32 +4,76 @@
 #include <string>
 #include <cstring>
 #include <iostream>
-#include <list>
-
-
+#include <iomanip>
+#include <fstream>
+#include <map>
+#include <utility>
 using namespace std;
 
+//insertBook(Book):void
+//getBook(string):Book
+//remove(string):Book
+//writeToFile(string):bool
+//ReadToFIle():file
+//toString();
 
 
-typedef struct Book{
-    string Title,Author;
-    bool isRead, inProgress;
-}Book;
+
+
 
 class BookList{
-  
-  list<Book> Books;
-  
-  Book getBook(string title){
-     
-     for(int i = 0; i < Books.size(); i++){
-         if(strcmp(Books.Title, title)){ //Research STL and Iterators
-             return Book;
-         }
-         else{
-             return null;
-         }
-     }
+  public: 
+
+    typedef struct Book{
+    string Title,Author;
+    bool isRead, inProgress;
+    }Book;
+
+  map<string,Book> Books;
+    
+    void insertBook(Book book){
+        Books.insert({book.Title, book});
+    }
+
+    Book getBook(string title){
+        return Books[title];
+    }
+
+    Book remove(string title){
+        Book b = Books[title];
+        Books.erase(title);
+        return b;
+    }
       
-  }
+    void WriteToFile(string name){
+        ofstream readingList(name);
+        for(map<string,Book>::iterator it = Books.begin(); it != Books.end(); ++it){
+            readingList << toString(it->second); 
+        }
+    }
+
+    FILE ReadFromFIle(){
+
+    }
+
+    Book constructBook(string Title, string Author, string isRead, string inProgress){
+        Book b;
+        b.Title = Title;
+        b.Author = Author;
+        if(isRead.compare("True")) b.isRead = true;
+            b.isRead = false;
+        if(inProgress.compare("True")) b.inProgress = true;
+            b.isRead = false;
+    }
+
+    string toString(Book book){
+        return book.Title + "\n" + book.Author + "\n" + btos(book.isRead) + "\n" + btos(book.inProgress) + "\n\n"; 
+    }
+
+    string btos(bool b){
+        if(b) return "True";
+        return "False";
+    }
+    
+  };
   
