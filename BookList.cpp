@@ -64,6 +64,8 @@ class BookList{
             b.isRead = false;
         if(inProgress.compare("True")) b.inProgress = true;
             b.isRead = false;
+
+        return b;
     }
 
     string toString(Book book){
