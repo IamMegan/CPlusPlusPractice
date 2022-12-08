@@ -3,22 +3,39 @@
 using namespace std;
 
 
+void clearStream();
+
 int main(int argc, char *argv[]){
     BookList b;
     string Title, Author, isRead, inProgress, fileName;
-    cout << "Enter some books in the order of Title, Author, Whether you have read it or not, and whether you have started it or not: ";
-    cin >> Title;
-    cout << endl;
-    cin >> Author;
-    cout << endl;
-    cin >> isRead;
-    cout << endl;
-    cin >> inProgress;
-    cout << endl;
+    char check = 'y';
+    while(check == 'y'){
+        cout << "Enter the title of a book: ";
+        cin >> Title;
+        clearStream();
+        cout << "Now an Author: ";
+        cin >> Author;
+        clearStream();
+        cout << "Whether you have started it, True/False: ";
+        cin >> inProgress;
+        clearStream();
+        cout << "And if you've finished it, True/False: ";
+        cin >> isRead;
+        clearStream();
+        cout << "Do you have more books to enter? y/n: ";
+        cin >> check;
+        clearStream();
+    }
+    
 
     b.constructBook(Title, Author, isRead, inProgress);
     cout << "Enter a file name: ";
     cin >> fileName;
     b.WriteToFile(fileName);
+  
 
+}
+
+void clearStream(){
+    while(cin.get() != '\n');
 }
