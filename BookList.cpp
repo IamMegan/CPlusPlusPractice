@@ -22,7 +22,7 @@ using namespace std;
 
 
 class BookList{
-  public: 
+  private:
 
     typedef struct Book{
     string Title,Author;
@@ -31,6 +31,17 @@ class BookList{
 
   map<string,Book> Books;
     
+    string toString(Book book){
+        return book.Title + "\n" + book.Author + "\n" + btos(book.isRead) + "\n" + btos(book.inProgress) + "\n\n"; 
+    }
+
+    string btos(bool b){
+        if(b) return "True";
+        return "False";
+    }
+    
+    public: 
+
     void insertBook(Book book){
         Books.insert({book.Title, book});
     }
@@ -54,6 +65,8 @@ class BookList{
     }
 
     FILE ReadFromFIle(){
+        ofstream readingList("ReadingList.txt");
+
 
     }
 
@@ -69,14 +82,7 @@ class BookList{
         return b;
     }
 
-    string toString(Book book){
-        return book.Title + "\n" + book.Author + "\n" + btos(book.isRead) + "\n" + btos(book.inProgress) + "\n\n"; 
-    }
-
-    string btos(bool b){
-        if(b) return "True";
-        return "False";
-    }
+    
     
   };
   
