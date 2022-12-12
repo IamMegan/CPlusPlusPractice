@@ -49,7 +49,9 @@ class BookList{
         ofstream readingList(name);
         for(map<string,Book>::iterator it = Books.begin(); it != Books.end(); ++it){
             readingList << toString(it->second); 
+            cout << toString(it->second);
         }
+        readingList.close();
     }
 
     FILE ReadFromFIle(){

@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
     }
     
 
-    b.constructBook(Title, Author, isRead, inProgress);
+    b.insertBook(b.constructBook(Title, Author, isRead, inProgress));
     cout << "Enter a file name: ";
     cin >> fileName;
     b.WriteToFile(fileName);
