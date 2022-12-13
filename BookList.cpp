@@ -32,7 +32,7 @@ class BookList{
   map<string,Book> Books;
     
     string toString(Book book){
-        return book.Title + "\n" + book.Author + "\n" + btos(book.isRead) + "\n" + btos(book.inProgress) + "\n\n"; 
+        return book.Title + "\n" + book.Author + "\n" + btos(book.isRead) + "\n" + btos(book.inProgress) + "\n" + book.ISBN + "\n\n"; 
     }
 
     string btos(bool b){
