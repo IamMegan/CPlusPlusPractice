@@ -25,7 +25,7 @@ class BookList{
   private:
 
     typedef struct Book{
-    string Title,Author;
+    string Title,Author,ISBN;
     bool isRead, inProgress;
     }Book;
 
@@ -64,16 +64,17 @@ class BookList{
         readingList.close();
     }
 
-    FILE ReadFromFIle(){
+    void ReadFromFIle(){
         ofstream readingList("ReadingList.txt");
-
+        
 
     }
 
-    Book constructBook(string Title, string Author, string isRead, string inProgress){
+    Book constructBook(string Title, string Author, string ISBN, string isRead, string inProgress){
         Book b;
         b.Title = Title;
         b.Author = Author;
+        b.ISBN = ISBN;
         if(isRead.compare("True")) b.isRead = true;
             b.isRead = false;
         if(inProgress.compare("True")) b.inProgress = true;

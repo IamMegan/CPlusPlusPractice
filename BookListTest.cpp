@@ -7,7 +7,7 @@ void clearStream();
 
 int main(int argc, char *argv[]){
     BookList b;
-    string Title, Author, isRead, inProgress, fileName;
+    string Title, Author, ISBN, isRead, inProgress, fileName;
     char check = 'y';
     while(check == 'y'){
         cout << "Enter the title of a book: ";
@@ -15,6 +15,9 @@ int main(int argc, char *argv[]){
         clearStream();
         cout << "Now an Author: ";
         cin >> Author;
+        clearStream();
+        cout << "the ISBN number: ";
+        cin >> ISBN;
         clearStream();
         cout << "Whether you have started it, True/False: ";
         cin >> inProgress;
@@ -28,7 +31,7 @@ int main(int argc, char *argv[]){
     }
     
 
-    b.insertBook(b.constructBook(Title, Author, isRead, inProgress));
+    b.insertBook(b.constructBook(Title, Author, ISBN, isRead, inProgress));
     cout << "Enter a file name: ";
     cin >> fileName;
     b.WriteToFile(fileName);
