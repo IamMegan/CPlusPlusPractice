@@ -61,7 +61,7 @@ class WebList{
       
     void WriteToFile(string name){
         ofstream siteList(name);
-        for(map<string,Website>::iterator it = Website.begin(); it != Website.end(); ++it){
+        for(map<string,Website>::iterator it = Sites.begin(); it != Sites.end(); ++it){
             siteList << toString(it->second); 
         }
         siteList.close();
