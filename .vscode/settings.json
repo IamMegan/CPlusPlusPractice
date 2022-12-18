@@ -5,6 +5,7 @@
         "iomanip": "cpp",
         "cstring": "cpp",
         "xtree": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "iostream": "cpp"
     }
 }

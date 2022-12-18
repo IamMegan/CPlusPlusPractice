@@ -64,8 +64,8 @@ class BookList{
         readingList.close();
     }
 
-    void ReadFromFIle(){
-        ofstream readingList("ReadingList.txt");
+    void ReadFromFIle(string name){
+        ofstream readingList(name);
         
 
     }

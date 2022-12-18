@@ -4,11 +4,26 @@
 #include "WebList.cpp"
 using namespace std;
 
-
-int main(int argc, int *argv[]){
-
-}
-
 class ResourcesHolder{
+    public: 
+    void initBookList(BookList b){
+        string name;
+        cout << "Enter a file to read from: ";
+        cin >> name;
+        b.ReadFromFIle(name);
+    }
+    public:
+    void initWebList(WebList w){
+        string name;
+        cout << "Enter a file to read from: ";
+        cin >> name;
+        w.ReadFromFIle(name);
+    }
 
+    int main(int argc, int *argv[]){
+    BookList b;
+    WebList w;
+    initBookList(b);
+    initWeblist(w);
+    }
 };
