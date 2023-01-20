@@ -12,7 +12,7 @@ class ResourcesHolder{
         cin >> name;
         b.ReadFromFIle(name);
     }
-    public:
+
     void initWebList(WebList w){
         string name;
         cout << "Enter a file to read from: ";
@@ -24,6 +24,6 @@ class ResourcesHolder{
     BookList b;
     WebList w;
     initBookList(b);
-    initWeblist(w);
+    initWebList(w);
     }
 };
